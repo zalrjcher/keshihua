@@ -1,8 +1,18 @@
 const Mock = require('mockjs');
 const menuData = [
     {
-        title: "gitDataV",
-        key: "gitDataV",
+        title: "国家自然科学基金项目对比",
+        key: "nsfcContrast",
+        children: [
+        {
+          title: "同单位历年中标情况对比",
+          key: "sameUnit",
+        },
+        {
+          title: "各负责人中标情况对比",
+          key: "noSamePeople",
+        },
+        ]
     },
     {
         title: "地域分析",

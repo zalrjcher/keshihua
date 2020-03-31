@@ -1,61 +1,36 @@
 const Mock = require('mockjs');//eslint-disable-line
-const pathdata = {
-  columns: [
+const row = [
     {
-      field: 'date',
-      name: '日期',
+      projectName: 'TGFβ1介导的整合素α1/α2在牙龈增生性疾病中的作用',
+      projectAdminName: "周洁",
+      dependUnitName: "武汉大学",
+      projectTypeName: "青年科学基金项目",
+      shengPiHao: "81200798 ",
+      range5: "5233",
+      range6:'',
+      projectKeyword:'药物性牙龈增生；整合素α1；整合素α2；三维培养;',
     },
-    {
-      field: 'range1',
-      name: '0~30',
-    },
-    {
-      field: 'range2',
-      name: '30~60',
-    },
-    {
-      field: 'range3',
-      name: '60~90',
-    },
-    {
-      field: 'range4',
-      name: '90~120',
-    },
-    {
-      field: 'range5',
-      name: '>=120',
-    },
-  ],
-  rows: [
-    {
-      date: '20181212',
-      range1: "123",
-      range2: "223",
-      range3: "323",
-      range4: "423",
-      range5: "523",
-
-    },
-    {
-      date: '20181213',
-      range1: "101",
-      range2: "201",
-      range3: "301",
-      range4: "401",
-      range5: "501",
-
-    },
-    {
-      date: '20181214',
-      range1: "181",
-      range2: "281",
-      range3: "381",
-      range4: "481",
-      range5: "581",
-
-    }
-  ]
-};
+  {
+    projectName: "TGFβ1介导的整合素α1/α2在牙龈增生性疾病中的作用",
+    projectAdminName: "周洁",
+    dependUnitName: "武汉大学",
+    projectTypeName: "青年科学基金项目",
+    shengPiHao: "81200798 ",
+    range5: "523",
+    range6:'',
+    projectKeyword:'药物性牙龈增生；整合素α1；整合素α2；三维培养;',
+  },
+  {
+    projectName: 'TGFβ1介导的整合素α1/α2在牙龈增生性疾病中的作用',
+    projectAdminName: "周洁",
+    dependUnitName: "武汉大学",
+    projectTypeName: "青年科学基金项目",
+    shengPiHao: "81200798 ",
+    range5: "523",
+    range6:'',
+    projectKeyword:'药物性牙龈增生；整合素α1；整合素α2；三维培养;',
+  },
+  ];
 const dict = Mock.mock({
         'eventDict|4-6': [
             '@string("lower", 5)'
@@ -69,7 +44,7 @@ module.exports = {
         console.log(req);
         res.status(200).json({
             data: {
-                pathData: pathdata
+              row: row
             },
             status: 0
         });

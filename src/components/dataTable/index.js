@@ -28,7 +28,7 @@ export default class DataTable extends PureComponent {
         data: {}, // table 数据
         bordered: true,
         showFooter: false,
-        sort: true, // 全排序
+        sort: false, // 全排序
         sortIndexs: [], // 列排序
         onPageChange: () => { },//eslint-disable-line
         columnSetting: [

@@ -9,3 +9,13 @@ export function fetch(payload) {
         }),
     });
 }
+export function getYearResult(payload) {
+  console.log('asdkfjgasdgfasuiodgfasuoidfasd')
+  console.log(payload)
+  return request(`/getYearResult`, {
+    method: 'POST',
+    body: JSON.stringify({
+      ...payload
+    }),
+  });
+}

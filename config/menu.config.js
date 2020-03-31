@@ -1,13 +1,32 @@
 export default [
 
   {
-    title: "基金查询",
+    title: "基金项目查询",
     link: "/sys/pathAnalysis",
     key: "pathAnalysis",
     icon: "contacts"
   },
+  {
+    title: "基金项目对比",
+    key: "nsfcContrast",
+    icon: "contacts",
+    children: [
+      {
+        title: "同单位历年中标对比",
+        link: "/sys/nsfcContrast/sameUnit",
+        key: "sameUnit",
+        icon: "line-chart"
+      },
+      {
+        title: "各负责人中标对比",
+        link: "/sys/nsfcContrast/noSamePeople",
+        key: "noSamePeople",
+        icon: "line-chart"
+      },
+    ]
+  },
     {
-        title: "资助项目统计",
+        title: "基金项目统计",
         key: "yonghuxingwei",
         icon: "contacts",
         children: [

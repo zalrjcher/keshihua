@@ -20,7 +20,7 @@ class MyForm extends Component {
         const { form, dict = {}, onSubmit,/* onGetEvents: getEvents, onGetPages: getPages */ } = this.props;
         const { getFieldDecorator, validateFields } = form;
         const { infoTypeDict = [] } = dict;
-        const { hide, timetype } = this.state;
+        // const { hide, timetype } = this.state;
         const InfoTypeOPtion = infoTypeDict.map((item, i) => (
             <Option value={item.value} key={i}>{item.name}</Option>
         ));
@@ -137,7 +137,6 @@ class MyForm extends Component {
                               />
                             )}
                           </FormItem>
-
                             <Row>
                                 <Col
                                     sm={24}

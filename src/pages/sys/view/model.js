@@ -1,97 +1,8 @@
-import moment from 'moment';
-import pathToRegexp from 'path-to-regexp';
-// import * as api from './service';
-const data =  {
-    "columns": [
-        {
-            "field": "xAxis",
-            "name": "时间",
-            "type": "string"
-        },
-        {
-            "field": "email",
-            "name": "邮件营销",
-            "type": "string"
-        },
-        {
-            "field": "union",
-            "name": "联盟广告",
-            "type": "string"
-        },
-        {
-            "field": "video",
-            "name": "视频广告",
-            "type": "string"
-        },
-        {
-            "field": "visit",
-            "name": "直接访问",
-            "type": "string"
-        },
-        {
-            "field": "search",
-            "name": "搜索引擎",
-            "type": "string"
-        }
-    ],
-    "rows": [
-        {
-            "xAxis": "2018-12-12",
-            "email": 120,
-            "union": 220,
-            "video": 150,
-            "visit": 30,
-            "search": 820
-        },
-        {
-            "xAxis": "2018-12-13",
-            "email": 132,
-            "union": 182,
-            "video": 232,
-            "visit": 332,
-            "search": 932
-        },
-        {
-            "xAxis": "2018-12-14",
-            "email": 101,
-            "union": 192,
-            "video": 202,
-            "visit": 302,
-            "search": 902
-        },
-        {
-            "xAxis": "2018-12-15",
-            "email": 134,
-            "union": 234,
-            "video": 154,
-            "visit": 334,
-            "search": 934
-        },
-        {
-            "xAxis": "2018-12-16",
-            "email": 90,
-            "union": 290,
-            "video": 190,
-            "visit": 390,
-            "search": 1290
-        },
-        {
-            "xAxis": "2018-12-17",
-            "email": 230,
-            "union": 330,
-            "video": 330,
-            "visit": 330,
-            "search": 1230
-        },
-        {
-            "xAxis": "2018-12-18",
-            "email": 210,
-            "union": 310,
-            "video": 420,
-            "visit": 320,
-            "search": 1320
-        }
-    ]
+// import pathToRegexp from 'path-to-regexp';
+ import * as api from './service';
+const data_1 =  {
+    "columns": [],
+    "rows": []
 };
 const dd = {
     columns: [
@@ -155,22 +66,47 @@ export default {
     state: {
         p1: {},
         p2: {},
-
+      dict:{
+        infoYear:[
+          {name:2020, value:2020},
+          {name:2019, value:2019},
+          {name:2018, value:2018},
+          {name:2017, value:2017},
+          {name:2016, value:2016},
+          {name:2015, value:2015},
+          {name:2014, value:2014},
+          {name:2013, value:2013},
+          {name:2012, value:2012},
+          {name:2011, value:2011},
+          {name:2010, value:2010},
+          {name:2009, value:2009},
+          {name:2008, value:2008},
+          {name:2007, value:2007},
+          {name:2006, value:2006},
+          {name:2005, value:2005},
+          {name:2004, value:2004},
+          {name:2003, value:2003},
+          {name:2002, value:2002},
+          {name:2001, value:2001},
+          {name:1999, value:1999},
+          {name:1998, value:1998},
+          {name:1997, value:1997},
+          {name:1996, value:1996},
+          {name:1995, value:1995},
+          {name:1994, value:1994},
+          {name:1993, value:1993},
+          {name:1992, value:1992},
+          {name:1991, value:1991},
+          {name:1990, value:1990},
+          {name:1989, value:1989},
+        ],
+      }
     },
     subscriptions: {
         setupHistory({ dispatch, history }) {
             history.listen(({ pathname, query, state }) => { // eslint-disable-line
                 if (/^\/sys\/view\//.test(pathname)) {
-                    const keys = pathToRegexp('/sys/view/:key').exec(pathname) || [];
-                    const [, key] = keys;
-                    if (key) {
-                        dispatch({
-                            type: 'getData', payload: {
-                                time: [moment().subtract(7, 'days'), moment().subtract(1, 'days')],
-                                key
-                            }
-                        });
-                    }
+                    // const keys = pathToRegexp('/sys/view/:key').exec(pathname) || [];
                 }
             });
         },
@@ -181,13 +117,32 @@ export default {
 //getData，payload是传来的参数，是个对象，如果没参数可以写成{_,{call,put,select}}
 *getData({ payload }, { call, put }) {//eslint-disable-line
             const { key } = payload;
-            // const { data = {} } = yield call(api.fetch, { ...payload });
-  //data 是返回的数据
+            const { data}  = yield call(api.getYearResult, { ...payload });
+            const name = data.result.name;
+            data_1.columns=[];
+            data_1.columns.push(
+              {
+                "field": "time",
+                "name": "时间",
+                "type": "string"
+              },{
+                "field": "oen",
+                "name":name ,
+                "type": "string"
+              },
+
+            );
+            data_1.rows=[]
+              for(let i = 0; i < data.result.row.length;i++){
+                data_1.rows.push({
+                  "time": data.result.row[i].time,
+                  "oen": data.result.row[i].nmu,
+                })
+               }
             yield put({
                 type: 'save',//reducers中的方法
-
                 payload: {
-                    [key]: key === 'p1' ? data : dd
+                    [key]: key === 'p1' ? data_1 : dd
                 },
             });
         },

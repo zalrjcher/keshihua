@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { message } from 'antd';
-import moment from 'moment';
+// import moment from 'moment';
 import _ from 'lodash';
 import MyForm from './components/form';
 import { DataTable } from '@components';
@@ -10,7 +10,7 @@ import {Fragment} from "@/pages/sys/view/components/view1";
 
 
 function PathAnalysis(props) {
-    const {  dict, events, pages, dispatch,loading ,data} = props;
+    const {  dict, events, pages, dispatch,loading ,dataSource} = props;
     const submit = (values) => {
         const { platformType, pages, ...rest } = values;
         if (platformType === "all") {
@@ -56,22 +56,23 @@ function PathAnalysis(props) {
           <MyForm dict={dict} onSubmit={submit} events={events} pages={pages} handleGetDict={handleGetDict} />
           <DataTable
             loading={loading}
-            data={data}
+            data={dataSource}
             headerStyle={{ marginTop: 15 }}
+            sortIndexs={[1]}
           />
         </Page>
     );
 }
 
 function mapStateToProps(state) {
-    const { pageData, eventData, dict, events, pages,data } = state.pathAnalysis;
+    const { pageData, eventData, dict, events, pages,dataSource } = state.pathAnalysis;
     return {
         pageData,
         eventData,
         events,
         pages,
         dict,
-        data,
+        dataSource,
         loading: state.loading.models.pathAnalysis,
     };
 }

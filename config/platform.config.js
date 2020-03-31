@@ -14,11 +14,11 @@ module.exports = {
     loginLogo: 'logo_blue_1024.png',
     sysLogo: 'logo.png',
     // 登录页名称
-    loginName: '数据平台',
+    loginName: '国家自然科学基金可视化数据平台',
     // 系统名称
-    sysName: 'TEST-Pro',
+    sysName: 'NSFC',
     // 版权
-    copyright: "2019 mpw0311@163.com.",
+    copyright: "2019 zalrjcher@163.com.",
     // 是否开启菜单权限校验
     menuPermission: true,
     // table默认一页条数
@@ -27,10 +27,10 @@ module.exports = {
     iconUrl: '//at.alicdn.com/t/font_1030595_depmdbpf3yc.js',
     // 系统默认首页
     sysDefultPage: {
-        pathname: '/sys/githubpro',
+        pathname: '/sys/pathAnalysis',
         state: {
-            key: 'gitDataV',
-            pathtitles: [{ title: 'gitDataV', icon: 'github' }],
+            key: 'pathAnalysis',
+            pathtitles: [{ title: 'pathAnalysis', icon: 'pathAnalysis' }],
         }
     },
 };
