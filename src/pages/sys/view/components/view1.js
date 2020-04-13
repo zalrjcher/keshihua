@@ -13,17 +13,22 @@ class Index extends PureComponent {
         super(props);
         this.state = {
           dependUnitName: '',
+          title:""
         };
     }
   handelChange(e){
     this.setState({
-      dependUnitName:e.target.value
+      dependUnitName:e.target.value,
     })
   };
     submit = () => {
         const { handleSubmit = () => { } } = this.props;
         const date  = this.state;
+        var str =date.dependUnitName;
         handleSubmit(date);
+        this.setState({
+        title:`${str}近十年的中标情况`
+      });
     };
     render() {
         const { dict = {}} = this.props;
@@ -31,7 +36,7 @@ class Index extends PureComponent {
         const InfoYearOPtion = infoYear.map((item, i) => (
         <Option value={item.value} key={i}>{item.name}</Option>
          ));
-        const { data, showY2, Y2Name, YName, loading,
+        const { data, showY2, Y2Name, YName, loading,titleText,
             handleClick = () => {
                 console.log("download");
             }
@@ -55,8 +60,7 @@ class Index extends PureComponent {
                 <Card
                     style={{ marginTop: 15 }}
                 >
-
-                    <Line title={"nihadjsfhaidsuf"} seriesLayoutBy={"column"} data={data} showY2={showY2} Y2SeriesIndex={[1]} YName={YName} Y2Name={Y2Name} loading={loading} />
+                    <Line titleText={titleText} titleFontSize={"20"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} showY2={showY2} Y2SeriesIndex={[1]} YName={YName} Y2Name={Y2Name} loading={loading} />
                 </Card>
                 <DataTable
                     loading={loading}

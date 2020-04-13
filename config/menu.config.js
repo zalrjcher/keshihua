@@ -18,6 +18,42 @@ export default [
         icon: "line-chart"
       },
       {
+        title: "不同研究领域对比",
+        link: "/sys/nsfcContrast/field",
+        key: "field",
+        icon: "line-chart"
+      },
+      {
+        title: "某一学科对比",
+        link: "/sys/nsfcContrast/subject",
+        key: "subject",
+        icon: "line-chart"
+      },
+      {
+        title: "某一领域历年对比",
+        link: "/sys/nsfcContrast/yearfield",
+        key: "yearfield",
+        icon: "line-chart"
+      },
+      {
+        title: "细分领域深度对比",
+        link: "/sys/nsfcContrast/fieldsd",
+        key: "fieldsd",
+        icon: "line-chart"
+      },
+      {
+        title: "某一学科多单位对比",
+        link: "/sys/nsfcContrast/subjectmoreu",
+        key: "subjectmoreu",
+        icon: "line-chart"
+      },
+      {
+        title: "某一学科多负责人对比",
+        link: "/sys/nsfcContrast/subjectmorep",
+        key: "subjectmorep",
+        icon: "line-chart"
+      },
+      {
         title: "各负责人中标对比",
         link: "/sys/nsfcContrast/noSamePeople",
         key: "noSamePeople",

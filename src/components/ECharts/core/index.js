@@ -38,10 +38,11 @@ export default class Chart extends PureComponent {
             {...chartConfig}
             {...rest}
             style={{
-              width: '100%',
+              width: '80%',
               textAlign: 'left',
               height,
-              minHeight: '300px',
+              margin:'auto',
+              minHeight: '400px',
               ...style,
             }}
             showLoading={showLoading}

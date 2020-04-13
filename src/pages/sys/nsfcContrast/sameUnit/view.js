@@ -51,7 +51,7 @@ class Index extends PureComponent {
     } = this.props;
     return (
       <Fragment>
-        <Row style={{ width: 650 }}>
+        <Row style={{ width: 650 ,margin:'auto'}}>
           <Col span={19}>
             &nbsp;&nbsp;&nbsp;<Input
               style={{width:200}}

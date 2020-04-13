@@ -66,6 +66,7 @@ export default {
     state: {
         p1: {},
         p2: {},
+      titleText:'',
       dict:{
         infoYear:[
           {name:2020, value:2020},
@@ -142,7 +143,8 @@ export default {
             yield put({
                 type: 'save',//reducers中的方法
                 payload: {
-                    [key]: key === 'p1' ? data_1 : dd
+                    [key]: key === 'p1' ? data_1 : dd,
+                  titleText:name
                 },
             });
         },

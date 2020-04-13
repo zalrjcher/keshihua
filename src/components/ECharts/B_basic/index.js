@@ -59,7 +59,6 @@ class BasicChart extends PureComponent {
                     alignItems: 'center',
                     ...style
                 }}>
-                    <span >无数据</span>
                 </div>
             );
         }

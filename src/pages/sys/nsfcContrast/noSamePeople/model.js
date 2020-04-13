@@ -37,7 +37,7 @@ const dd_ = {
   ]
 };
 export default {
-  namespace: 'sameUnit',
+  namespace: 'noSamePeople',
   state:{
     data:{},
     dict:{

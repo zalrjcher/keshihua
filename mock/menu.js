@@ -12,6 +12,34 @@ const menuData = [
           title: "各负责人中标情况对比",
           key: "noSamePeople",
         },
+        {
+          title: "不同研究领域对比",
+          key: "field",
+        },
+        {
+          title: "某一学科对比",
+          key: "subject",
+        },
+        {
+          title: "某一领域历年对比",
+          key: "yearfield",
+        },
+        {
+          title: "细分领域深度对比",
+          key: "fieldsd",
+        },
+        {
+          title: "某一学科多单位对比",
+          key: "subjectmoreu",
+        },
+        {
+          title: "某一学科多负责人对比",
+          key: "subjectmorep",
+        },
+        {
+          title: "某一学科多负责人对比",
+          key: "subjectmorep",
+        },
         ]
     },
     {
