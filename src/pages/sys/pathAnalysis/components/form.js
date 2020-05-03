@@ -71,7 +71,7 @@ class MyForm extends Component {
                 {...formItemLayout}
                 label="负责人"
               >
-                {getFieldDecorator('projectAdminName ', {})(
+                {getFieldDecorator('projectAdminName', {})(
                   <Input
                     placeholder='请输入项目负责人'
                   >

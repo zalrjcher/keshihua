@@ -59,11 +59,9 @@ const checkStatus = response => {
   error.response = response;
   throw error;
 };
-export const _request = async (url, options = {}) => {
-  console.log("dafdasfdasf")
-  console.log("dafdasfdasf")
-  console.log(url)
-  console.log(options)
+export const _request = async (url, options) => {
+  console.log(url);
+  console.log(options);
   const { method, headers, body } = options;
   if (method === 'POST' || method === 'PUT' || method === 'DELETE') {
     if (!(body instanceof FormData)) {
@@ -72,7 +70,6 @@ export const _request = async (url, options = {}) => {
         'Content-Type': 'application/json; charset=utf-8',
         ...headers,
       };
-      options.body = JSON.stringify(options.body);
     } else {
       // newOptions.body is FormData
       options.headers = {
@@ -81,34 +78,46 @@ export const _request = async (url, options = {}) => {
       };
     }
   }
-  console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
   console.log(apiPrefix);
-  const response = axios.get("/api/").then(resp=>{
+
+  const response = axios.post("/api"+url,{query:options.body.query},{
+    headers:options.headers,
+  }).then(resp=>{
     console.log(resp)
     if(resp.status===200){
-      console.log("respresprespresprespresp")
-      console.log(resp.data)
+      console.log('请求的结果'+JSON.stringify(resp))
+      return resp.data.hits.hits;
     }else {
       console.log("31431432")
     }
   }).catch(error=>{
-    console.log(error)
-  })
-  const dataa = {
-    "query": {
-      "simple_query_string": {
-        "query": "中国"
-      }
+    const { name: status } = error;
+    if (status === 401) {
+      logout();
+      return;
     }
-  }
-  axios.post("/api/nsfc_v2/_search",dataa).then(resp=>{
-    console.log(resp)
+    // environment should not be used
+    if (status === 403) {
+      router.push('/403');
+      return;
     }
-  ).catch(error=>{
-    console.log(error)
-  })
+    if (status <= 504 && status >= 500) {
+      router.push('/500');
+      return;
+    }
+    if (status >= 404 && status < 422) {
+      router.push('/404');
+      return;
+    }
+    if (status === 'SyntaxError') {
+      message.error(`SyntaxError:${error.message}`);
+      setTimeout(() => {
+        logout();
+      }, 1500);
+    }
+  });
   return response;
-}
+};
 export default async (url, options) => {
   checkIsLogin(url);
   const defaultOptions = {

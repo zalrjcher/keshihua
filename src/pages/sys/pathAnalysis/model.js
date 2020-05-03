@@ -40,6 +40,13 @@ import * as api from './service';
      name: '关键词',
    },
   ]
+var  row=[];
+const query={
+  bool:{
+    must:[],
+    filter:[]
+  }
+};
 export default {
   namespace: 'pathAnalysis',
   state: {
@@ -131,8 +138,72 @@ export default {
         },
         type: 'save',
       });
-
     },
+
+    * getResult({payload}, {select,call, put}) {
+     console.log("表单参数")
+     console.log(payload)
+      if (payload.dependUnitName!==undefined &&payload.dependUnitName.trim().length!==0) {
+        query.bool.must.push({
+          match: {
+            "dependUnit.name": payload.dependUnitName
+          }
+        });
+      }
+      if (payload.projectKeyword!==undefined&&payload.projectKeyword.trim().length!==0) {
+        query.bool.filter.push({term: {projectKeywordC: payload.projectKeyword}},);
+      }
+      if (payload.projectAdminName!==undefined&&payload.projectAdminName.trim().length!==0) {
+        query.bool.filter.push({term: {"projectAdmin.name": payload.projectAdminName}},);
+      }
+      if (payload.shengPiHao!==undefined&&payload.shengPiHao.trim().length!==0) {
+        query.bool.filter.push({term: {ratifyNo: payload.shengPiHao}},);
+      }
+      if (payload.projectTypeName!==undefined&&payload.projectTypeName.trim().length!==0) {
+        query.bool.filter.push({term: {"projectType.name":'面上项目'}},);
+      }
+      query.bool.filter.push(
+        {
+          range: {
+            ratifyYear: {
+              gte: "1990",
+              lte: "2020"
+            }
+          }
+        }
+        );
+      console.log(query)
+      const data = yield call(api.getResult, {
+        query,
+      });
+      query.bool.filter=[];
+      query.bool.must=[];
+      for (let i = 0; i < data.length; i++) {
+        const source = data[i]._source;
+        row.push({
+            projectName:source.project.name,///data._source.project.name
+            projectAdminName: source.projectAdmin.name,//projectAdmin.name
+            dependUnitName: source.dependUnit.name,//dependUnit.name
+            projectTypeName: source.projectType.name,//projectType.name
+            shengPiHao:source.ratifyNo,//ratifyNo
+            range5:source.ratifyYear,//ratifyYear
+            range6:source.supportNum,//supportNum
+            projectKeyword:source.projectKeywordC,//projectKeywordC
+          })
+      }
+      console.log(row);
+      const rows =row;
+      row=[];
+      const dataSource={columns,rows};
+      yield put({
+        payload: {
+          dataSource:dataSource,
+          values: payload,
+        },
+        type: 'save',
+      });
+    },
+
     * getDict({payload}, {call, put}) {
       const {data} = yield call(api.getInfoTypeDict, {...payload});
       const {eventDict: events, pageDict: pages} = data;

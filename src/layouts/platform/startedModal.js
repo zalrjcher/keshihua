@@ -4,9 +4,6 @@ export default class Started extends PureComponent {
     state = {
         visible: false
     }
-    componentDidMount() {
-        this.testStarted();
-    }
     testStarted = () => {
         const started = localStorage.getItem('started');
         if (started !== 'true') {
@@ -23,7 +20,6 @@ export default class Started extends PureComponent {
         this.setState({
             visible: false
         });
-        window.location.href = 'https://github.com/mpw0311/antd-umi-sys';
     }
     handleCancel = () => {
         this.setState({

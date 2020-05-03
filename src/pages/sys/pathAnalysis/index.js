@@ -34,7 +34,7 @@ function PathAnalysis(props) {
           return false;
         }
         dispatch({
-            type: 'pathAnalysis/fetch',
+            type: 'pathAnalysis/getResult',
             payload: {
                 ...values,
 

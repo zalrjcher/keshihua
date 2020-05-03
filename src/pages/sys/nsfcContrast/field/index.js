@@ -11,8 +11,8 @@ class Index extends PureComponent {
     const { loading, dispatch,dict,data,unitType} = this.props;
     const onSubmit =(values)=>{
       dispatch({
-        type:'field/getData',
-        payload:{values}
+        type:'field/getData',//方法名
+        payload:{values}//参数
       });
       message.success('提交成功！');
     }
