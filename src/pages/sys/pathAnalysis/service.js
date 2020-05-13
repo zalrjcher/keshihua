@@ -20,6 +20,6 @@ export function getInfoTypeDict(payload) {
 export function getResult(payload) {
     return _request(`/nsfc_v2/_search`, {
         method: 'POST',
-        body:payload
+        body:payload.query
     });
 }

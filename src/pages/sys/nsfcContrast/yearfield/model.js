@@ -1,21 +1,26 @@
 import * as api from './service';
+const columns = [
+  {
+    field: 'date',
+    name: '日期',
+  },
+  {
+    field: 'projectsNumber',
+    name: '项目数量',
+  },
+  {
+    field: 'money',
+    name: '资助金额',
+  },
+  ];
+var rows=[];
+const query= {
+  bool: {
+    should: [],
+    filter:[],
+  },
+}
 const dd = {
-  columns: [
-    {
-      field: 'date',
-      name: '日期',
-    },
-    {
-      field: 'projectsNumber',
-      name: '项目数量',
-    },
-    {
-      field: 'money',
-      name: '资助金额',
-    },
-  ],
-  rows: [
-  ]
 };
 
 const dd_ = {
@@ -95,14 +100,46 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      dd.rows=[];
+      if (payload.values.subjectType!==undefined&&payload.values.subjectType.trim().length!==0) {
+        query.bool.should.push({match: {"project.name":payload.values.subjectType}},);
+        query.bool.should.push({match: {"projectKeywordC":payload.values.subjectType}},);
+        query.bool.should.push({match: {"projectAbstractC":payload.values.subjectType}},);
+      }
+      if (payload.values.startYear!==undefined) {
+        if (payload.values.endYear!==undefined) {
+          query.bool.filter.push({range: {ratifyYear:{
+                "gte":payload.values.startYear,
+                "lte":payload.values.endYear
+              }}},);
+        }
+      }
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": { "field": "ratifyYear" ,
+              "size": 100},
+            "aggs": {
+              "sum_price": {
+                "sum": { "field": "supportNum" }
+              }
+            }
+          }
+        }
+      };
+      const _result = yield call(api.getsameunit, { _query });
+      const  {sameUnit=[],unitType=[]} = _result;
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      query.bool.should=[]
+      query.bool.filter=[]
+      var row=[];
       dd_.rows=[];
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
+      for(var i = 0; i<result.length ; i++){
+        row.push({
+          date:result[i].key_as_string,
+          money:result[i].sum_price.value,
+          projectsNumber:result[i].doc_count
         })
       }
       for(var j = 0; j<unitType.length ; j++){
@@ -112,10 +149,12 @@ export default {
           projectsNumber:unitType[j].projectsNumber
         })
       }
+      rows =row ;
+      const  data ={columns,rows}
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

@@ -26,7 +26,7 @@ class Index extends PureComponent {
 function mapStateToProps({ field, loading  }) {
   return {
     ...field,
-    loading: loading.models.snbThree,
+    loading: loading.models.field,
   };
 }
 

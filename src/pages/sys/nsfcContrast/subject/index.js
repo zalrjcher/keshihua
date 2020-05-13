@@ -6,8 +6,7 @@ import { message } from 'antd';
 
 //在components里面连接对应的Model,connect会把namespace对应的state绑定到props,并且还会绑定dispatch给props。
 class Index extends PureComponent {
-
-  render() {
+  render(){
     const { loading, dispatch,dict,data,unitType} = this.props;
     const onSubmit =(values)=>{
       dispatch({
@@ -15,7 +14,7 @@ class Index extends PureComponent {
         payload:{values}
       });
       message.success('提交成功！');
-    }
+  }
     return (
       <Page title={'某一学科中标情况对比'} loading={loading}>
         <View dict={dict} handleSubmit={onSubmit} loading={loading} data={data} unitType={unitType} />
@@ -23,10 +22,10 @@ class Index extends PureComponent {
     );
   }
 }
-function mapStateToProps({ subject, loading  }) {
+function mapStateToProps({ subject, loading }) {
   return {
     ...subject,
-    loading: loading.models.snbThree,
+    loading: loading.models.subject,
   };
 }
 

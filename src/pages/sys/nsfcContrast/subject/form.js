@@ -18,8 +18,11 @@ class MyForm extends Component {
   render() {
     const {form, dict = {}, onSubmit} = this.props;
     const {getFieldDecorator, validateFields} = form;
-    const {infoYear = []} = dict;
+    const {infoYear = [],infoSubject=[]} = dict;
     const InfoTypeOPtion = infoYear.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const infoSubjectOPtion = infoSubject.map((item, i) => (
       <Option value={item.value} key={i}>{item.name}</Option>
     ));
     const formItemLayout = {
@@ -70,11 +73,15 @@ class MyForm extends Component {
                 label="学科分类"
               >
                 {getFieldDecorator('subjectType', {})(
-                  <Input
-                    style={{width: 180}}
-                    placeholder='请输入学科分类'
+                  <Select
+                    style={{width: 300}}
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {infoSubjectOPtion}
+                  </Select>
                 )}
               </FormItem>
             </Col>

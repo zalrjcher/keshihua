@@ -79,14 +79,14 @@ export const _request = async (url, options) => {
     }
   }
   console.log(apiPrefix);
-
-  const response = axios.post("/api"+url,{query:options.body.query},{
+console.log(options)
+  const response = axios.post("/api"+url,{query:options.body,size:options.size,aggs:options.aggs},{
     headers:options.headers,
   }).then(resp=>{
-    console.log(resp)
     if(resp.status===200){
-      console.log('请求的结果'+JSON.stringify(resp))
-      return resp.data.hits.hits;
+      console.log('请求的结果')
+      console.log(resp)
+      return resp.data;
     }else {
       console.log("31431432")
     }

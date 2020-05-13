@@ -1,23 +1,29 @@
 import * as api from './service';
-const dd = {
-  columns: [
-    {
-      field: 'date',
-      name: '日期',
-    },
-    {
-      field: 'projectsNumber',
-      name: '项目数量',
-    },
-    {
-      field: 'money',
-      name: '资助金额',
-    },
-  ],
-  rows: [
-  ]
-};
 
+
+const  columns=[
+  {
+    field: 'date',
+    name: '日期',
+  },
+  {
+    field: 'projectsNumber',
+    name: '项目数量',
+  },
+  {
+    field: 'money',
+    name: '资助金额',
+  },
+]
+var  rows= [
+]
+const dd = {
+};
+const query= {
+  bool: {
+    filter: [],
+  },
+}
 const dd_ = {
   columns: [
     {
@@ -74,6 +80,19 @@ export default {
         {name:1990, value:1990},
         {name:1989, value:1989},
       ],
+      infoSubject:[
+        {name:"数理科学部", value:"A"},
+        {name:"化学科学部", value:"B"},
+        {name:"生命科学部", value:"C"},
+        {name:"地球科学部", value:"D"},
+        {name:"信息科学部", value:"F"},
+        {name:"管理科学部", value:"G"},
+        {name:"医学科学部", value:"H"},
+        {name:"计划局", value:"J"},
+        {name:"联合基金领域", value:"L"},
+        {name:"办公室", value:"M"},
+        {name:"国际合作局", value:"R"},
+      ]
     }
   },
 
@@ -95,27 +114,58 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      dd.rows=[];
+      if (payload.values.subjectType!==undefined&&payload.values.subjectType.trim().length!==0) {
+        query.bool.filter.push({prefix: {"code":payload.values.subjectType}},);
+      }
+      if (payload.values.startYear!==undefined) {
+        if (payload.values.endYear!==undefined) {
+          query.bool.filter.push({range: {ratifyYear:{
+                "gte":payload.values.startYear,
+                "lte":payload.values.endYear
+              }}},);
+        }
+      }
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": { "field": "ratifyYear" ,
+              "size": 30},
+            "aggs": {
+              "avg_price": {
+                "sum": { "field": "supportNum" }
+              }
+            }
+          }
+        }
+      };
+      const _result = yield call(api.getsameunit, { _query });
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      query.bool.filter=[]
+      const {sameUnit=[],unitType=[]} = result
+      var row=[];
       dd_.rows=[];
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
+      for(var i = 0; i<result.length ; i++){
+        row.push({
+          date:result[i].key_as_string,
+          money:result[i].avg_price.value,
+          projectsNumber:result[i].doc_count
         })
       }
       for(var j = 0; j<unitType.length ; j++){
-        dd_.rows.push({
+        row.push({
           title:unitType[j].title,
           money:unitType[j].money,
           projectsNumber:unitType[j].projectsNumber
         })
       }
+      rows  = row  ;
+      const  data ={columns,rows}
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

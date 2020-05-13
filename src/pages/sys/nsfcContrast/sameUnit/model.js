@@ -1,6 +1,6 @@
 import * as api from './service';
-const dd = {
-  columns: [
+
+ const columns= [
     {
       field: 'date',
       name: '日期',
@@ -13,11 +13,16 @@ const dd = {
       field: 'money',
       name: '资助金额',
     },
-  ],
-  rows: [
+  ];
+ var rows=[
   ]
-};
 
+const query={
+  bool:{
+    must:[],
+  },
+
+};
 const dd_ = {
   columns: [
     {
@@ -39,7 +44,10 @@ const dd_ = {
 export default {
   namespace: 'sameUnit',
   state:{
-    data:{},
+    data:{
+      columns:[],
+      row: [],
+    },
     dict:{
       infoYear:[
         {name:2020, value:2020},
@@ -95,14 +103,46 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      dd.rows=[];
+      console.log(payload)
+      if (payload.data.startTime!==undefined) {
+        if (payload.data.endTime!==undefined) {
+          query.bool.must.push({range: {ratifyYear:{
+                "gte":payload.data.startTime,
+                "lte":payload.data.endTime
+              }}},);
+        }
+      }
+      if (payload.data.dependUnitName!==undefined&&payload.data.dependUnitName.trim().length!==0) {
+        query.bool.must.push({match: {"dependUnit.name":payload.data.dependUnitName}},);
+        // alert(1)
+       }
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": { "field": "ratifyYear","size":30},
+            "aggs": {
+              "avg_price": {
+                "sum": { "field": "supportNum" }
+              }
+            }
+          }
+        }
+      };
+      const _result= yield call(api.getsameunit,  _query );
+      console.log("=同单位的历年中标情况的对比")
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      console.log(result)
+      query.bool.must=[];//清空之前的数据
+      const {sameUnit=[],unitType=[]} = result;
+      var row =[];
       dd_.rows=[];
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
+      for(var i = 0; i<result.length ; i++){
+        row.push({
+          date:result[i].key_as_string,
+          money:result[i].avg_price.value,
+          projectsNumber:result[i].doc_count
         })
       }
       for(var j = 0; j<unitType.length ; j++){
@@ -112,10 +152,12 @@ export default {
           projectsNumber:unitType[j].projectsNumber
         })
       }
+      rows = row;
+      const  data ={columns,rows}
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

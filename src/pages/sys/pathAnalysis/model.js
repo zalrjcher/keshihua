@@ -173,9 +173,10 @@ export default {
         }
         );
       console.log(query)
-      const data = yield call(api.getResult, {
+      const _data = yield call(api.getResult, {
         query,
       });
+      const data =_data.hits.hits;
       query.bool.filter=[];
       query.bool.must=[];
       for (let i = 0; i < data.length; i++) {
