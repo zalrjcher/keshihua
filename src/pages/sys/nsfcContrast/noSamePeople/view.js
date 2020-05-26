@@ -20,7 +20,7 @@ class Index extends PureComponent {
   }
   handelChange(e){
     this.setState({
-      dependUnitName:e.target.value
+      dependUnitName:e
     })
   }
   startTime_(v){
@@ -39,9 +39,13 @@ class Index extends PureComponent {
     handleSubmit(date);
   };
   render() {
+    const handleFilter = (input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     const { dict = {}} = this.props;
-    const {infoYear=[]} = dict;
+    const {infoYear=[],dependUnit=[]} = dict;
     const InfoYearOPtion = infoYear.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const dependUnitList = dependUnit.map((item, i) => (
       <Option value={item.value} key={i}>{item.name}</Option>
     ));
     const { data, showY2, Y2Name, YName, loading,unitType,
@@ -51,14 +55,19 @@ class Index extends PureComponent {
     } = this.props;
     return (
       <Fragment>
-        <Row style={{ width: 650 ,margin:'auto'}}>
+        <Row style={{ width: 750 ,margin:'auto'}}>
           <Col span={19}>
-            &nbsp;&nbsp;&nbsp;<Input
-              style={{width:200}}
-              placeholder='请输入依托单位'
-              onChange={this.handelChange.bind(this)}
-            >
-            </Input>&nbsp;&nbsp;&nbsp;
+            依托单位
+            &nbsp;&nbsp;&nbsp; <Select
+            style={{width: 200}}
+            showSearch
+            placeholder="请选择"
+            optionFilterProp="children"
+            onChange={this.handelChange.bind(this)}
+            filterOption={handleFilter}
+          >
+            {dependUnitList}
+          </Select>&nbsp;&nbsp;&nbsp;
             <span>审批时间&nbsp;&nbsp;&nbsp;</span>
             <Select
               style={{width:100}}

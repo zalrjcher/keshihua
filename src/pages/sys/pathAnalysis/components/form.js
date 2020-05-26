@@ -21,8 +21,14 @@ class MyForm extends Component {
   render() {
     const {form, dict = {}, onSubmit,/* onGetEvents: getEvents, onGetPages: getPages */} = this.props;
     const {getFieldDecorator, validateFields} = form;
-    const {infoTypeDict = []} = dict;
+    const {infoTypeDict = [],dependUnit =[],infoYear=[]} = dict;
     const InfoTypeOPtion = infoTypeDict.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const dependUnitList = dependUnit.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const infoYearList = infoYear.map((item, i) => (
       <Option value={item.value} key={i}>{item.name}</Option>
     ));
 
@@ -99,10 +105,14 @@ class MyForm extends Component {
                 label="依托单位"
               >
                 {getFieldDecorator('dependUnitName', {})(
-                  <Input
-                    placeholder='请输入项目依托单位'
+                  <Select
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
@@ -121,15 +131,35 @@ class MyForm extends Component {
                 )}
               </FormItem>
               <FormItem
+              {...formItemLayout}
+              label="开始年份"
+            >
+              {getFieldDecorator('startYear', {})(
+                <Select
+                  style={{width: 100}}
+                  showSearch
+                  placeholder="请选择"
+                  optionFilterProp="children"
+                  filterOption={handleFilter}
+                >
+                  {infoYearList}
+                </Select>
+              )}
+            </FormItem>
+              <FormItem
                 {...formItemLayout}
-                label="批准年度"
+                label="结束年份"
               >
-                {getFieldDecorator('ratifyYear', {})(
-                  <RangePicker
-                    defaultValue={initTime}
-                    format={dateFormat}
-                    onChange={this.onChange}
-                  />
+                {getFieldDecorator('endYear', {})(
+                  <Select
+                    style={{width: 100}}
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
+                  >
+                    {infoYearList}
+                  </Select>
                 )}
               </FormItem>
               <Row>

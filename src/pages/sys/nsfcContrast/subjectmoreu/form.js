@@ -18,8 +18,14 @@ class MyForm extends Component {
   render() {
     const {form, dict = {}, onSubmit} = this.props;
     const {getFieldDecorator, validateFields} = form;
-    const {infoYear = []} = dict;
+    const {infoYear = [] ,dependUnit=[] ,infoSubject=[]} = dict;
     const InfoTypeOPtion = infoYear.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const dependUnitList = dependUnit.map((item, i) => (
+      <Option value={item.value} key={i}>{item.name}</Option>
+    ));
+    const infoSubjectList = infoSubject.map((item, i) => (
       <Option value={item.value} key={i}>{item.name}</Option>
     ));
     const formItemLayout = {
@@ -56,11 +62,15 @@ class MyForm extends Component {
                 label="学科分类"
               >
                 {getFieldDecorator('subjectType', {})(
-                  <Input
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入学科分类'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {infoSubjectList}
+                  </Select>,
                 )}
               </FormItem>
             </Col>
@@ -129,48 +139,64 @@ class MyForm extends Component {
                 {...formItemLayout}
                 label="依托单位1"
               >
-                {getFieldDecorator('keyWord1', {})(
-                  <Input
+                {getFieldDecorator('dependUnit1', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位4"
               >
-                {getFieldDecorator('keyWord4', {})(
-                  <Input
+                {getFieldDecorator('dependUnit4', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位7"
               >
-                {getFieldDecorator('keyWord7', {})(
-                  <Input
+                {getFieldDecorator('dependUnit7', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位10"
               >
-                {getFieldDecorator('keyWord10', {})(
-                  <Input
+                {getFieldDecorator('dependUnit10', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
             </Col>
@@ -182,36 +208,48 @@ class MyForm extends Component {
                 {...formItemLayout}
                 label="依托单位2"
               >
-                {getFieldDecorator('keyWord2', {})(
-                  <Input
+                {getFieldDecorator('dependUnit2', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位5"
               >
-                {getFieldDecorator('keyWord5', {})(
-                  <Input
+                {getFieldDecorator('dependUnit5', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位8"
               >
-                {getFieldDecorator('keyWord8', {})(
-                  <Input
+                {getFieldDecorator('dependUnit8', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
 
@@ -224,36 +262,48 @@ class MyForm extends Component {
                 {...formItemLayout}
                 label="依托单位3"
               >
-                {getFieldDecorator('keyWord3', {})(
-                  <Input
+                {getFieldDecorator('dependUnit3', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位6"
               >
-                {getFieldDecorator('keyWord6', {})(
-                  <Input
+                {getFieldDecorator('dependUnit6', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
               <FormItem
                 {...formItemLayout}
                 label="依托单位9"
               >
-                {getFieldDecorator('keyWord9', {})(
-                  <Input
+                {getFieldDecorator('dependUnit9', {})(
+                  <Select
                     style={{width: 180}}
-                    placeholder='请输入依托单位'
+                    showSearch
+                    placeholder="请选择"
+                    optionFilterProp="children"
+                    filterOption={handleFilter}
                   >
-                  </Input>,
+                    {dependUnitList}
+                  </Select>,
                 )}
               </FormItem>
             </Col>

@@ -74,6 +74,19 @@ export default {
         {name:1990, value:1990},
         {name:1989, value:1989},
       ],
+      infoSubject:[
+        {name:"数理科学部", value:"A"},
+        {name:"化学科学部", value:"B"},
+        {name:"生命科学部", value:"C"},
+        {name:"地球科学部", value:"D"},
+        {name:"信息科学部", value:"F"},
+        {name:"管理科学部", value:"G"},
+        {name:"医学科学部", value:"H"},
+        {name:"计划局", value:"J"},
+        {name:"联合基金领域", value:"L"},
+        {name:"办公室", value:"M"},
+        {name:"国际合作局", value:"R"},
+      ]
     }
   },
 
