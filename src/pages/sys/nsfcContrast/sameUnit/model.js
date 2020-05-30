@@ -1,5 +1,136 @@
 import * as api from './service';
 
+var subjectList=[
+    {
+      "id": "A",
+      "name": "数理科学部"
+    },
+    {
+      "id": "B",
+      "name": "化学科学部"
+    },
+    {
+      "id": "C",
+      "name": "生命科学部"
+    },
+    {
+      "id": "D",
+      "name": "地球科学部"
+    },
+    {
+      "id": "E",
+      "name": "工程与材料科学"
+    },
+    {
+      "id": "F",
+      "name": "信息科学部"
+    },
+    {
+      "id": "G",
+      "name": "管理科学部"
+    },
+    {
+      "id": "H",
+      "name": "医学科学部"
+    },
+    {
+      "id": "J",
+      "name": "计划局"
+    },
+    {
+      "id": "L",
+      "name": "联合基金领域"
+    },
+    {
+      "id": "M",
+      "name": "办公室"
+    },
+    {
+      "id": "R",
+      "name": "国际合作局"
+    }
+]
+var typeList=[
+  {
+    "name": "青年科学基金项目",
+    "value": "630"
+  },
+  {
+    "name": "地区科学基金项目",
+    "value": "631"
+  },
+  {
+    "name": "面上项目",
+    "value": "218"
+  },
+  {
+    "name": "海外及港澳学者合作研究基金",
+    "value": "632"
+  },
+  {
+    "name": "重点项目",
+    "value": "220"
+  },
+  {
+    "name": "重大项目",
+    "value": "222"
+  },
+  {
+    "name": "重大研究计划",
+    "value": "339"
+  },
+  {
+    "name": "国家杰出青年科学基金",
+    "value": "429"
+  },
+  {
+    "name": "创新研究群体项目",
+    "value": "432"
+  },
+  {
+    "name": "国际(地区)合作与交流项目",
+    "value": "433"
+  },
+  {
+    "name": "专项基金项目",
+    "value": "649"
+  },
+  {
+    "name": "联合基金项目",
+    "value": "579"
+  },
+  {
+    "name": "应急管理项目",
+    "value": "70"
+  },
+  {
+    "name": "科学中心项目",
+    "value": "7161"
+  },
+  {
+    "name": "国家基础科学人才培养基金",
+    "value": "635"
+  },
+  {
+    "name": "优秀青年科学基金项目",
+    "value": "2699"
+  },
+  {
+    "name": "专项项目",
+    "value": "8531"
+  },
+  {
+    "name": "国家重大科研仪器设备研制专项",
+    "value": "51"
+  },
+  {
+    "name": "国家重大科研仪器研制项目",
+    "value": "52"
+  },
+  {
+    "name": "海外或港、澳青年学者合作研究基金",
+    "value": "2733"
+  }]
  const columns= [
     {
       field: 'date',
@@ -24,6 +155,24 @@ const query={
 
 };
 const dd_ = {
+  columns: [
+    {
+      field: 'title',
+      name: '项目名称',
+    },
+    {
+      field: 'projectsNumber',
+      name: '项目数量',
+    },
+    {
+      field: 'money',
+      name: '资助金额',
+    },
+  ],
+  rows: [
+  ]
+};
+const data1 = {
   columns: [
     {
       field: 'title',
@@ -122,8 +271,8 @@ export default {
     },
     * getData({payload}, {call, put}) {
       console.log(payload)
-      if (payload.data.startTime!==undefined) {
-        if (payload.data.endTime!==undefined) {
+      if (payload.data.startTime!==undefined&&payload.data.startTime!=="") {
+        if (payload.data.endTime!==undefined&&payload.data.endTime!=="") {
           query.bool.must.push({range: {ratifyYear:{
                 "gte":payload.data.startTime,
                 "lte":payload.data.endTime
@@ -131,7 +280,7 @@ export default {
         }
       }
       if (payload.data.dependUnitName!==undefined&&payload.data.dependUnitName.trim().length!==0) {
-        query.bool.must.push({match: {"dependUnit.name":payload.data.dependUnitName}},);
+        query.bool.must.push({match: {"dependUnit.id":payload.data.dependUnitName}},);
         // alert(1)
        }
       const _query={
@@ -141,42 +290,98 @@ export default {
           "group_by_tags": {
             "terms": { "field": "ratifyYear","size":30},
             "aggs": {
-              "avg_price": {
-                "sum": { "field": "supportNum" }
+              "supportNum": {
+                "sum": {
+                  "field": "supportNum"
+                }
+              }
+            }
+          },
+          "group_by_code": {
+            "terms": {
+              "field": "code",
+              "script": {
+                "source": "_value.substring(0,1)"
+              },
+              "size": 20
+            },
+            "aggs": {
+              "supportNum": {
+                "sum": {
+                  "field": "supportNum"
+                }
+              }
+            }
+          },
+          "group_by_type": {
+            "terms": {
+              "field": "projectType.id",
+              "size": 20
+            },
+            "aggs": {
+              "supportNum": {
+                "sum": {
+                  "field": "supportNum"
+                }
               }
             }
           }
         }
       };
       const _result= yield call(api.getsameunit,  _query );
-      console.log("=同单位的历年中标情况的对比")
+      console.log("同单位的历年中标情况的对比")
       const  result  = _result.aggregations.group_by_tags.buckets;
+      const  result1  = _result.aggregations.group_by_code.buckets;
+      const  result2  = _result.aggregations.group_by_type.buckets;
       console.log(result)
       query.bool.must=[];//清空之前的数据
-      const {sameUnit=[],unitType=[]} = result;
       var row =[];
-      dd_.rows=[];
       for(var i = 0; i<result.length ; i++){
         row.push({
           date:result[i].key_as_string,
-          money:result[i].avg_price.value,
+          money:result[i].supportNum.value,
           projectsNumber:result[i].doc_count
         })
       }
-      for(var j = 0; j<unitType.length ; j++){
-        dd_.rows.push({
-          title:unitType[j].title,
-          money:unitType[j].money,
-          projectsNumber:unitType[j].projectsNumber
+      var row1 =[];
+      for(var i = 0; i<result1.length ; i++){
+        var name ;
+        for (var j = 0; j <subjectList.length ; j++) {
+            if(result1[i].key ===subjectList[j].id){
+              name=subjectList[j].name
+            }
+        }
+        row1.push({
+          title:name,
+          money:result1[i].supportNum.value,
+          projectsNumber:result1[i].doc_count
+        })
+      }
+
+      var row2 =[];
+      for(var i = 0; i<result2.length ; i++){
+        var name ;
+        for (var h = 0; h <typeList.length ; h++) {
+          if(result2[i].key ===typeList[h].value){
+            name=typeList[h].name
+          }
+        }
+        row2.push({
+          title:name,
+          money:result2[i].supportNum.value,
+          projectsNumber:result2[i].doc_count
         })
       }
       rows = row;
       const  data ={columns,rows}
+      dd_.rows =row1
+      data1.rows=row2
       yield put({
         type: 'save',
         payload: {
           data:data,
-          unitType:dd_
+          unitType:dd_,
+          data1:data1
         },
       });
     },

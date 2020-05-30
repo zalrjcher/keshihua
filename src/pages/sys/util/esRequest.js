@@ -15,7 +15,7 @@ const logout = () => {
     type: 'global/logout',
   });
 };
-const apiPrefix='http://zhsf:zhsf6666@es-cn-v0h1m6day000d4yic.public.elasticsearch.aliyuncs.com:9200';
+const apiPrefix='http://172.16.155.23:9200';
 const checkIsLogin = (url) => {
   const isLogin = sessionStorage.getItem('isLogin');
   const href = window.location.href;

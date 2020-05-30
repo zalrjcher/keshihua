@@ -48,7 +48,7 @@ class Index extends PureComponent {
     const dependUnitList = dependUnit.map((item, i) => (
       <Option value={item.value} key={i}>{item.name}</Option>
     ));
-    const { data, showY2, Y2Name, YName, loading,unitType,
+    const { data, showY2, Y2Name, YName, loading,unitType,data1,
       handleClick = () => {
         console.log("download");
       }
@@ -97,23 +97,35 @@ class Index extends PureComponent {
             animated={false}
             style={{ textAlign: 'right' }}
           >
-            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
-              <Bar seriesLayoutBy={"column"} data={data} loading={loading} />
-            </TabPane>
             <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
-              <Line seriesLayoutBy={"column"} data={data} loading={loading} />
+              <Line  YName={'次'} Y2Name={'元'} titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading}  showY2={true}/>
             </TabPane>
+
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <Bar  titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading} showy />
+            </TabPane>
+
           </Tabs>
           <Tabs
             animated={false}
             style={{ textAlign: 'right' }}
           >
             <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
-              <YBar seriesLayoutBy={"column"} data={unitType} loading={loading} />
+              <YBar titleText={"各学科中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={unitType} loading={loading} />
             </TabPane>
             <TabPane tab={<Icon type="pie-chart" />} key="2" style={{ textAlign: 'left' }}>
-              <Pie seriesLayoutBy={"column"} data={unitType} loading={loading} />
+              <Pie titleText={"各学科中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={unitType} loading={loading} />
             </TabPane>
+
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right' }}
+          >
+            <TabPane tab={<Icon type="pie-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Pie titleText={"各项目标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data1} loading={loading} />
+            </TabPane>
+
           </Tabs>
         </Card>
       </Fragment>

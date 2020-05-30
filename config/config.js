@@ -73,9 +73,9 @@ export default {
   theme,
   proxy: {
     "/api": {
-      target: "http://zhsf:zhsf6666@es-cn-v0h1m6day000d4yic.public.elasticsearch.aliyuncs.com:9200",
+      target: "http://172.16.155.23:9200",
       changeOrigin: true,
-      pathRewrite: { "^/api": "http://zhsf:zhsf6666@es-cn-v0h1m6day000d4yic.public.elasticsearch.aliyuncs.com:9200" }
+      pathRewrite: { "^/api": "172.16.155.23:9200" }
     }
   },
 }

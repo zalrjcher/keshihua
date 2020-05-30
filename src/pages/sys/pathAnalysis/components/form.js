@@ -104,7 +104,7 @@ class MyForm extends Component {
                 {...formItemLayout}
                 label="依托单位"
               >
-                {getFieldDecorator('dependUnitName', {})(
+                {getFieldDecorator('"dependUnitId"', {})(
                   <Select
                     showSearch
                     placeholder="请选择"
