@@ -1,6 +1,5 @@
 import * as api from './service';
-const dd = {
-  columns: [
+  var columns= [
     {
       field: 'date',
       name: '日期',
@@ -13,11 +12,36 @@ const dd = {
       field: 'money',
       name: '资助金额',
     },
-  ],
-  rows: [
   ]
-};
-
+var dependUnitList=[
+  {value:"100017",name:"郑州大学"},
+  {value:"100027",name:"上海交通大学"},
+  {value:"100019",name:"中国科学院金属研究所"},
+  {value:"100001",name:"南昌航空大学"},
+  {value:"100011",name:"河北师范大学"},
+  {value:"100015",name:"中国科学院武汉岩土力学研究所"},
+  {value:"100020",name:"中国科学院微生物研究所"},
+  {value:"100025",name:"河南理工大学"},
+  {value:"100010",name:"河南省农业科学院"},
+  {value:"100002",name:"北京矿冶科技集团有限公司"},
+  {value:"100008",name:"中国疾病预防控制中心环境与健康相关产品安全所"},
+  {value:"100003",name:"沈阳地质矿产研究所"},
+  {value:"100016",name:"中国社会科学院语言研究所"},
+  {value:"100012",name:"上海市激光技术研究所"},
+  {value:"201523",name:"哈尔滨工程大学"},
+  {value:"400557",name:"东莞理工学院"},
+]
+var rows=[
+]
+const query= {
+  bool: {
+    must: [],
+    filter: {
+      terms: {
+      }
+    }
+  },
+}
 const dd_ = {
   columns: [
     {
@@ -126,27 +150,92 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      dd.rows=[];
+
+      if (payload.values.subjectType!==undefined&&payload.values.subjectType.trim().length!==0) {
+        query.bool.must.push({prefix: {"code":payload.values.subjectType}},);
+      }
+      if (payload.values.startYear!==undefined) {
+        if (payload.values.endYear!==undefined) {
+          query.bool.must.push({range: {ratifyYear:{
+                "gte":payload.values.startYear,
+                "lte":payload.values.endYear
+              }}},);
+        }
+      }
+      var keyword =[];
+      if(payload.values.dependUnit1!==undefined&&payload.values.dependUnit1.trim().length!==0){
+        keyword.push(payload.values.dependUnit1)
+      }
+      if(payload.values.dependUnit2!==undefined&&payload.values.dependUnit2.trim().length!==0){
+        keyword.push(payload.values.dependUnit2)
+      }
+      if(payload.values.dependUnit3!==undefined&&payload.values.dependUnit3.trim().length!==0){
+        keyword.push(payload.values.dependUnit3)
+      }
+      if(payload.values.dependUnit4!==undefined&&payload.values.dependUnit4.trim().length!==0){
+        keyword.push(payload.values.dependUnit4)
+      }
+      if(payload.values.dependUnit5!==undefined&&payload.values.dependUnit5.trim().length!==0){
+        keyword.push(payload.values.dependUnit5)
+      }
+      if(payload.values.dependUnit6!==undefined&&payload.values.dependUnit6.trim().length!==0){
+        keyword.push(payload.values.dependUnit6)
+      }
+      if(payload.values.dependUnit7!==undefined&&payload.values.dependUnit7.trim().length!==0){
+        keyword.push(payload.values.dependUnit7)
+      }
+      if(payload.values.dependUnit8!==undefined&&payload.values.dependUnit8.trim().length!==0){
+        keyword.push(payload.values.dependUnit8)
+      }
+      if(payload.values.dependUnit9!==undefined&&payload.values.dependUnit9.trim().length!==0){
+        keyword.push(payload.values.dependUnit9)
+      }
+      if(payload.values.dependUnit10!==undefined&&payload.values.dependUnit10.trim().length!==0){
+        keyword.push(payload.values.dependUnit10)
+      }
+      query.bool.filter.terms={"dependUnit.id":keyword}
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": {"field":"dependUnit.id","size":10000},
+            "aggs": {
+              "sum_supportNum":{
+                "sum":{"field":"supportNum"}
+              }
+            }
+          }
+        }
+      };
+      const  _result= yield call(api.getsameunit, {_query });
+      const  {sameUnit=[],unitType=[]} =_result;
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      query.bool.must=[];
+      query.bool.filter.terms={}
+      var row =[];
+      for (let i = 0; i <result.length ; i++) {
+        var key = result[i].key
+        var dependUnit = dependUnitList
+        var name ;
+        for (let j = 0; j <dependUnit.length ; j++) {
+              if(dependUnit[j].value==key){
+                name=dependUnit[j].name
+              }
+        }
+        row.push({
+          date:name,
+          money:result[i].sum_supportNum.value,
+          projectsNumber:result[i].doc_count
+        })
+      }
+      rows = row;
+      const  data ={columns,rows}
       dd_.rows=[];
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
-        })
-      }
-      for(var j = 0; j<unitType.length ; j++){
-        dd_.rows.push({
-          title:unitType[j].title,
-          money:unitType[j].money,
-          projectsNumber:unitType[j].projectsNumber
-        })
-      }
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

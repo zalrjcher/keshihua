@@ -1,6 +1,5 @@
 import * as api from './service';
-const dd = {
-  columns: [
+  var columns = [
     {
       field: 'date',
       name: '日期',
@@ -13,11 +12,16 @@ const dd = {
       field: 'money',
       name: '资助金额',
     },
-  ],
-  rows: [
   ]
-};
 
+var rows=  [
+]
+const query={
+  bool:{
+    must:[],
+  },
+
+};
 const dd_ = {
   columns: [
     {
@@ -113,27 +117,50 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      console.log(sameUnit);
-      console.log(unitType);
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
+      if (payload.data.startTime!==undefined&&payload.data.startTime!=="") {
+        if (payload.data.endTime!==undefined&&payload.data.endTime!=="") {
+          query.bool.must.push({range: {ratifyYear:{
+                "gte":payload.data.startTime,
+                "lte":payload.data.endTime
+              }}},);
+        }
+      }
+      if (payload.data.dependUnitName!==undefined&&payload.data.dependUnitName.trim().length!==0) {
+        query.bool.must.push({match: {"dependUnit.id":payload.data.dependUnitName}},);
+        // alert(1)
+      }
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": {"field": "projectAdmin.name" ,"size":20},
+            "aggs": {
+              "sum_supportNum":{
+                "sum":{"field":"supportNum"}
+              }
+            }
+          }
+        }
+      };
+      const  _result= yield call(api.getsameunit, {_query });
+      const  {sameUnit=[],unitType=[]} =_result;
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      query.bool.must=[];//清空之前的数据
+      var row =[];
+      for(var i = 0; i<result.length ; i++){
+        row.push({
+          date:result[i].key,
+          money:result[i].sum_supportNum.value,
+          projectsNumber:result[i].doc_count
         })
       }
-      for(var j = 0; j<unitType.length ; j++){
-        dd_.rows.push({
-          title:unitType[j].title,
-          money:unitType[j].money,
-          projectsNumber:unitType[j].projectsNumber
-        })
-      }
+      rows = row;
+      const  data ={columns,rows}
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

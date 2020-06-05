@@ -1,6 +1,5 @@
 import * as api from './service';
-const dd = {
-  columns: [
+ var  columns =[
     {
       field: 'date',
       name: '日期',
@@ -13,11 +12,21 @@ const dd = {
       field: 'money',
       name: '资助金额',
     },
-  ],
-  rows: [
   ]
-};
 
+
+
+var rows = [
+]
+const query= {
+  bool: {
+    must: [],
+    filter: {
+      terms: {
+      }
+    }
+  },
+}
 const dd_ = {
   columns: [
     {
@@ -108,27 +117,67 @@ export default {
       });
     },
     * getData({payload}, {call, put}) {
-      const {sameUnit=[],unitType=[]}  = yield call(api.getsameunit, { ...payload });
-      dd.rows=[];
-      dd_.rows=[];
-      for(var i = 0; i<sameUnit.length ; i++){
-        dd.rows.push({
-          date:sameUnit[i].time,
-          money:sameUnit[i].money,
-          projectsNumber:sameUnit[i].projectsNumber
+      if (payload.values.subjectType!==undefined&&payload.values.subjectType.trim().length!==0) {
+        query.bool.must.push({prefix: {"code":payload.values.subjectType}},);
+      }
+      if (payload.values.startYear!==undefined) {
+        if (payload.values.endYear!==undefined) {
+          query.bool.must.push({range: {ratifyYear:{
+                "gte":payload.values.startYear,
+                "lte":payload.values.endYear
+              }}},);
+        }
+      }
+      var keyword =[];
+      if(payload.values.keyWord1!==undefined&&payload.values.keyWord1.trim().length!==0){
+        keyword.push(payload.values.keyWord1)
+      }
+      if(payload.values.keyWord4!==undefined&&payload.values.keyWord4.trim().length!==0){
+        keyword.push(payload.values.keyWord4)
+      }
+      if(payload.values.keyWord2!==undefined&&payload.values.keyWord2.trim().length!==0){
+        keyword.push(payload.values.keyWord2)
+      }
+      if(payload.values.keyWord5!==undefined&&payload.values.keyWord5.trim().length!==0){
+        keyword.push(payload.values.keyWord5)
+      }
+      if(payload.values.keyWord3!==undefined&&payload.values.keyWord3.trim().length!==0){
+        keyword.push(payload.values.keyWord3)
+      }
+      query.bool.filter.terms={"projectAdmin.name":keyword}
+      const _query={
+        query:query,
+        size: 0,
+        aggs: {
+          "group_by_tags": {
+            "terms": {"field":"projectAdmin.name","size":10000},
+            "aggs": {
+              "sum_supportNum":{
+                "sum":{"field":"supportNum"}
+              }
+            }
+          }
+        }
+      };
+      const  _result= yield call(api.getsameunit, {_query });
+      const  {sameUnit=[],unitType=[]} =_result;
+      const  result  = _result.aggregations.group_by_tags.buckets;
+      query.bool.must=[];
+      query.bool.filter.terms={}
+      var row =[];
+      for (let i = 0; i <result.length ; i++) {
+        row.push({
+          date:result.key,
+          money:result[i].sum_supportNum.value,
+          projectsNumber:result[i].doc_count
         })
       }
-      for(var j = 0; j<unitType.length ; j++){
-        dd_.rows.push({
-          title:unitType[j].title,
-          money:unitType[j].money,
-          projectsNumber:unitType[j].projectsNumber
-        })
-      }
+      rows = row;
+      const  data ={columns,rows}
       yield put({
         type: 'save',
         payload: {
-          data:dd,
+          data:data,
           unitType:dd_
         },
       });

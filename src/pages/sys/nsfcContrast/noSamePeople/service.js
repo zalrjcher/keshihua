@@ -1,4 +1,5 @@
 import { request } from '@utils';
+import {_request} from "@/pages/sys/util/esRequest";
 
 export function fetch(payload) {
   const { time, key } = payload;
@@ -10,18 +11,18 @@ export function fetch(payload) {
   });
 }
 export function getYearResult(payload) {
-  return request(`/getYearResult`, {
+  return _request(`/nsfc_v2/_search`, {
     method: 'POST',
-    body: JSON.stringify({
-      ...payload
-    }),
+    body:payload._query.query,
+    size:payload._query.size,
+    aggs:payload._query.aggs
   });
 }
 export function getsameunit(payload) {
-  return request(`/getsameunit`, {
+  return _request(`/nsfc_v2/_search`, {
     method: 'POST',
-    body: JSON.stringify({
-      ...payload
-    }),
+    body:payload._query.query,
+    size:payload._query.size,
+    aggs:payload._query.aggs
   });
 }

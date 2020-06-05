@@ -98,11 +98,11 @@ class Index extends PureComponent {
             style={{ textAlign: 'right' }}
           >
             <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
-              <Line  showY2={true} YName={'次'} Y2Name={'元'} titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading}  showY2={true}/>
+              <Line  showY2={true} YName={'次'} Y2Name={'万元'} titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading}  showY2={true}/>
             </TabPane>
 
             <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
-              <Bar  titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading} showy />
+              <Bar YName={'次'} Y2Name={'万元'}   showY2={true} Y2Type={'bar'} titleText={"年份中标情况"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data} loading={loading} showy />
             </TabPane>
 
           </Tabs>

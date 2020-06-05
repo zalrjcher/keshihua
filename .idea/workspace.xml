@@ -3,10 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="28f34dd6-e397-4240-8b85-5ae6a79c7b5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/view.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/view.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,65 +40,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="58" column="64" lean-forward="true" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="232" column="29" lean-forward="true" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
-              <folding>
-                <element signature="e#50#202#0" />
-                <element signature="e#2810#3160#0" />
-                <element signature="e#3187#3250#0" />
-                <element signature="e#3592#3939#0" />
-                <element signature="e#3987#4034#0" />
-                <element signature="e#4366#4413#0" />
-                <element signature="e#4795#4842#0" />
-                <element signature="e#5190#5237#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="211">
+              <caret line="20" selection-start-line="20" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -100,46 +52,100 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/index.less">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/sys/view/p1.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="319">
+              <caret line="227" column="26" lean-forward="true" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="46" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#245#845#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/series.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1479" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/index.propTypes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="70" column="51" lean-forward="true" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+            <state relative-caret-position="293">
+              <caret line="61" column="60" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/type.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="226">
+              <caret line="61" column="62" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="374" column="5" selection-start-line="374" selection-start-column="5" selection-end-line="375" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="161" column="6" selection-start-line="161" selection-start-column="6" selection-end-line="163" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -155,8 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>URL</find>
-      <find>api</find>
       <find>apiPrefix</find>
       <find>request</find>
       <find>8088</find>
@@ -170,10 +174,7 @@
       <find>dependunit.id</find>
       <find>InfoTypeOPtion</find>
       <find>handleFilter</find>
-      <find>某一学科多个单位中标情况对比</find>
       <find>Select</find>
-      <find>某一学科多个负责人中标情况对比</find>
-      <find>同单位各负责人中标情况对比</find>
       <find>&quot;projectType.name&quot;</find>
       <find>columns</find>
       <find>title</find>
@@ -185,6 +186,11 @@
       <find>同单位历年中标情况对比</find>
       <find>细分领域中标情况深度对比</find>
       <find>某一研究领域历年中标情况对比</find>
+      <find>某一学科多个单位中标情况对比</find>
+      <find>元</find>
+      <find>某一学科多个负责人中标情况对比</find>
+      <find>同单位各负责人中标情况对比</find>
+      <find>projectTypeName</find>
     </findStrings>
     <replaceStrings>
       <replace>name</replace>
@@ -203,11 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/form.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/index.js" />
-        <option value="$PROJECT_DIR$/src/components/ECharts/B_basic/index.js" />
         <option value="$PROJECT_DIR$/node_modules/_@elastic_elasticsearch@7.6.1@@elastic/elasticsearch/index.js" />
         <option value="$PROJECT_DIR$/node_modules/@elastic/elasticsearch/index.js" />
         <option value="$PROJECT_DIR$/src/utils/request.js" />
@@ -236,12 +237,8 @@
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/fieldsd/service.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/fieldsd/model.js" />
         <option value="$PROJECT_DIR$/src/utils/1" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/form.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/form.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/util/esRequest.js" />
         <option value="$PROJECT_DIR$/config/config.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/pathAnalysis/components/form.js" />
@@ -249,11 +246,20 @@
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/model.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/pathAnalysis/model.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/model.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/view.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js" />
-        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js" />
         <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/service.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/service.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/view.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/service.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js" />
+        <option value="$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js" />
       </list>
     </option>
   </component>
@@ -272,9 +278,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-55" />
-    <option name="y" value="102" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="37" />
+    <option name="y" value="77" />
     <option name="width" value="1940" />
     <option name="height" value="925" />
   </component>
@@ -389,7 +395,60 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="sys" type="462c0819:PsiDirectoryNode" />
               <item name="nsfcContrast" type="462c0819:PsiDirectoryNode" />
-              <item name="yearfield" type="462c0819:PsiDirectoryNode" />
+              <item name="noSamePeople" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="nsfcContrast" type="462c0819:PsiDirectoryNode" />
+              <item name="sameUnit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="nsfcContrast" type="462c0819:PsiDirectoryNode" />
+              <item name="subject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="nsfcContrast" type="462c0819:PsiDirectoryNode" />
+              <item name="subjectmorep" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="nsfcContrast" type="462c0819:PsiDirectoryNode" />
+              <item name="subjectmoreu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="pathAnalysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
+              <item name="keshihua" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="pathAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="keshihua" type="b2602c69:ProjectViewProjectNode" />
@@ -410,7 +469,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../course" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -484,17 +543,19 @@
       <workItem from="1590822120093" duration="11061000" />
       <workItem from="1590846843760" duration="638000" />
       <workItem from="1590975819612" duration="5677000" />
+      <workItem from="1591351279374" duration="1352000" />
+      <workItem from="1591356805137" duration="4182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212556000" />
+    <option name="totallyTimeSpent" value="218090000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-44" y="82" width="1552" height="740" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917898" visible="true" weight="0.19344042" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917898" visible="true" weight="0.19906166" />
       <window_info id="Structure" order="1" sideWeight="0.500821" side_tool="true" weight="0.15884718" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -512,7 +573,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
       <window_info anchor="bottom" id="JProfiler" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.051369864" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.067919075" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -560,128 +621,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/fieldsd/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/1" />
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#572#1604#0" />
-            <element signature="e#1623#2325#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1769">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="72" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1682">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1392">
-          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
-          <folding>
-            <element signature="e#572#1604#0" />
-            <element signature="e#1623#2325#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1624">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="69" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="17" />
-          <folding>
-            <element signature="e#572#1604#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="80" column="1" lean-forward="true" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/index.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#122#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -699,26 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1919">
           <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="18" column="105" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="105" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/components/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4234">
-          <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,27 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2833">
-          <caret line="261" column="12" selection-start-line="261" selection-start-column="12" selection-end-line="261" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="122" column="47" lean-forward="true" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -780,32 +678,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="65" column="15" lean-forward="true" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="15" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/fieldsd/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2381">
-          <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
-          <folding>
-            <element signature="e#50#202#0" />
           </folding>
         </state>
       </provider>
@@ -845,13 +723,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/xAxis.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="369" column="21" selection-start-line="369" selection-start-column="21" selection-end-line="369" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -894,64 +765,9 @@
         <state relative-caret-position="-1721" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/type.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/series.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1479" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="58" column="64" lean-forward="true" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/index.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/view/p1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/index.propTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="70" column="51" lean-forward="true" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
+        <state relative-caret-position="696">
           <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -961,7 +777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
+        <state relative-caret-position="551">
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
@@ -969,19 +785,264 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/index.less">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/view/p1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="232" column="29" lean-forward="true" selection-start-line="232" selection-start-column="29" selection-end-line="232" selection-end-column="29" />
+        <state relative-caret-position="522">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/series.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/index.propTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1914">
+          <caret line="70" column="51" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ECharts/A_basic/type.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2416">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="72" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/components/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="121" column="51" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/pathAnalysis/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="252" column="80" selection-start-line="252" selection-start-column="65" selection-end-line="252" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/fieldsd/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-793">
+          <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
           <folding>
             <element signature="e#50#202#0" />
-            <element signature="e#2810#3160#0" />
-            <element signature="e#3187#3250#0" />
-            <element signature="e#3592#3939#0" />
-            <element signature="e#3987#4034#0" />
-            <element signature="e#4366#4413#0" />
-            <element signature="e#4795#4842#0" />
-            <element signature="e#5190#5237#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/yearfield/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="242" column="66" lean-forward="true" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="66" />
+          <folding>
+            <element signature="e#50#202#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="18" column="105" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="160" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/field/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-862">
+          <caret line="168" column="44" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="61" column="62" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="103" column="19" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subject/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="61" column="60" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="20" selection-start-line="20" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="161" column="6" selection-start-line="161" selection-start-column="6" selection-end-line="163" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/sameUnit/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="374" column="5" selection-start-line="374" selection-start-column="5" selection-end-line="375" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmoreu/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="227" column="26" lean-forward="true" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="46" />
+          <folding>
+            <element signature="e#245#845#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/subjectmorep/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="61" column="62" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/sys/nsfcContrast/noSamePeople/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
