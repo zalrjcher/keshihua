@@ -131,7 +131,7 @@ export default {
         aggs: {
           "group_by_tags": {
             "terms": { "field": "ratifyYear" ,
-              "size": 30},
+              "size": 30,"order" : {"_key" : "desc" }},
             "aggs": {
               "avg_price": {
                 "sum": { "field": "supportNum" }
