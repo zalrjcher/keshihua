@@ -59,7 +59,18 @@ class Index extends PureComponent {
               <Bar seriesLayoutBy={"column"} data={data} loading={loading} />
             </TabPane>
             <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
-              <Line  showY2={true} YName={'次'} Y2Name={'元'} seriesLayoutBy={"column"} data={data} loading={loading}  />
+              <Line  seriesLayoutBy={"column"} data={data} loading={loading}  />
+            </TabPane>
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right'}}
+          >
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <YBar seriesLayoutBy={"column"} data={unitType} loading={loading} />
+            </TabPane>
+            <TabPane tab={<Icon type="pie-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Pie seriesLayoutBy={"column"} data={unitType} loading={loading} />
             </TabPane>
           </Tabs>
         </Card>

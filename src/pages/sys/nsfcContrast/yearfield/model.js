@@ -119,7 +119,7 @@ export default {
         aggs: {
           "group_by_tags": {
             "terms": { "field": "ratifyYear" ,
-              "size": 10000,"order" : {"_key" : "desc" }},
+              "size": 100},
             "aggs": {
               "sum_price": {
                 "sum": { "field": "supportNum" }
@@ -128,117 +128,7 @@ export default {
           }
         }
       };
-      //相关学科中标金额top10
-      const subjectMoneyQuery={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "code" ,"size": 10, "order" : {"sum_price" : "desc" }
-            },
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-      //相关学科中标数量top10
-      const subjectNumQuery={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "code" ,"size": 10, "order" : {"_count" : "desc" }
-            },
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-      //研究领域负责人中标金额top10
-      const chargePersonMoneyQuery={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "projectAdmin.name" ,"size": 10, "order" : {"sum_price" : "desc" }},
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-      //研究领域负责人中标数量top10
-      const chargePerNumQuery ={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "projectAdmin.name" ,"size": 10, "order" : {"_count" : "desc" }},
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-      //研究领域中标金额top10
-      const  fieldMoneyQuery={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "dependUnit.id" ,"size": 10, "order" : {"sum_price" : "desc" }},
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-      //研究领域中标中标数量top10
-      const  fieldMNumQuery ={
-        query:query,
-        size: 0,
-        "aggs": {
-          "group_by_tags": {
-            "terms": { "field": "dependUnit.id" ,"size": 10, "order" : {"_count" : "desc" }},
-            "aggs": {
-              "sum_price": {
-                "sum": { "field": "supportNum" }
-              }
-            }
-          }
-        }
-      }
-
       const _result = yield call(api.getsameunit, { _query });
-      const subjectMoneyResult = yield call(api.getsameunit, { _query:subjectMoneyQuery });
-      const subjectNumResult = yield call(api.getsameunit, { _query:subjectNumQuery });
-      const chargePersonMoneyResult = yield call(api.getsameunit, { _query:chargePersonMoneyQuery });
-      const chargePerNumResult = yield call(api.getsameunit, { _query:chargePerNumQuery });
-      const fieldMoneyResult = yield call(api.getsameunit, { _query:fieldMoneyQuery });
-      const fieldMNumResult = yield call(api.getsameunit, { _query:fieldMNumQuery });
-
-console.log(subjectMoneyResult)
-console.log(subjectNumResult)
-console.log(chargePersonMoneyResult)
-console.log(chargePerNumResult)
-console.log(fieldMoneyResult)
-console.log(fieldMNumResult)
-
-
-
-
       const  {sameUnit=[],unitType=[]} = _result;
       const  result  = _result.aggregations.group_by_tags.buckets;
       query.bool.should=[]
