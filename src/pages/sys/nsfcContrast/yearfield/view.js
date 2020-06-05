@@ -40,7 +40,7 @@ class Index extends PureComponent {
       handleSubmit(values);
     };
     const { dict = {}} = this.props;
-    const { data, showY2, Y2Name, YName, loading,unitType,
+    const { data,data1,data2,data3,data4,data5,data6, showY2, Y2Name, YName, loading,unitType,
       handleClick = () => {
         console.log("download");
       }
@@ -59,9 +59,53 @@ class Index extends PureComponent {
               <Line  showY2={true} YName={'次'} Y2Name={'万元'} seriesLayoutBy={"column"} data={data} loading={loading}  />
             </TabPane>
             <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
-              <Bar seriesLayoutBy={"column"} data={data} loading={loading} />
+              <Bar YName={'次'} Y2Name={'万元'}   showY2={true} Y2Type={'bar'} seriesLayoutBy={"column"} data={data} loading={loading} />
+            </TabPane>
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right' }}
+          >
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <YBar titleText={"学科金额前十名"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data1} loading={loading} />
+            </TabPane>
+            <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Line titleText={"学科金额前十名"} titleFontSize={"18"} titleColor={"#333"}  seriesLayoutBy={"column"} data={data1} loading={loading}  />
             </TabPane>
 
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right' }}
+          >
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <YBar titleText={"学科中标前十名"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data2} loading={loading} />
+            </TabPane>
+            <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Line  titleText={"学科中标前十名"} titleFontSize={"18"} titleColor={"#333"}  seriesLayoutBy={"column"} data={data2} loading={loading}  />
+            </TabPane>
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right' }}
+          >
+            <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Line titleText={"负责人金额前十名"} titleFontSize={"18"} titleColor={"#333"}  seriesLayoutBy={"column"} data={data3} loading={loading}  />
+            </TabPane>
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <YBar titleText={"负责人金额前十名"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data3} loading={loading} />
+            </TabPane>
+          </Tabs>
+          <Tabs
+            animated={false}
+            style={{ textAlign: 'right' }}
+          >
+            <TabPane tab={<Icon type="bar-chart" />} key="1" style={{ textAlign: 'left' }}>
+              <YBar titleText={"负责人标前十名"} titleFontSize={"18"} titleColor={"#333"} seriesLayoutBy={"column"} data={data4} loading={loading} />
+            </TabPane>
+            <TabPane tab={<Icon type="line-chart" />} key="2" style={{ textAlign: 'left' }}>
+              <Line  titleText={"负责人标前十名"} titleFontSize={"18"} titleColor={"#333"}  seriesLayoutBy={"column"} data={data4} loading={loading}  />
+            </TabPane>
           </Tabs>
         </Card>
       </Fragment>

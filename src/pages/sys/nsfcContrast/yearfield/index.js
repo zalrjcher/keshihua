@@ -8,7 +8,7 @@ import { message } from 'antd';
 class Index extends PureComponent {
 
   render() {
-    const { loading, dispatch,dict,data,unitType} = this.props;
+    const { loading, dispatch,dict,data,unitType,data1,data2,data3,data4,data5,data6} = this.props;
     const onSubmit =(values)=>{
       dispatch({
         type:'yearfield/getData',
@@ -18,7 +18,7 @@ class Index extends PureComponent {
     }
     return (
       <Page title={'某一研究领域历年中标情况对比'} loading={loading}>
-        <View dict={dict} handleSubmit={onSubmit} loading={loading} data={data} unitType={unitType} />
+        <View dict={dict} handleSubmit={onSubmit} loading={loading} data5={data5} data6={data6} data3={data3} data4={data4} data2={data2} data={data} data1={data1}  unitType={unitType} />
       </Page>
     );
   }
